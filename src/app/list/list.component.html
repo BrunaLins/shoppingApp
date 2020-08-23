@@ -1,0 +1,23 @@
+
+  
+  
+<!--<button (click)="addOrRemoveContactToFavs(contact)" class="btn btn-light">
+  <i class="fa fa-star"></i>
+</button>-->
+
+<div>
+  
+  <a *ngFor="let produit of paniers" href="#" class="list-group-item">  
+    <button (click)="removeProduitToPaniers(produits)" class="btn btn-light">
+      <i class="fa fa-trash"></i>
+    </button>
+<!---<p style="margin:0 auto;">{{produit.nom}}<span style="float:right;">{{produit.price}}</span></p>-->
+{{produit.nom}}<span style="float:right;">{{produit.price}}</span>
+</a>
+</div>
+<div class="d-flex justify-content-between">
+  <h2 > {{paniers.length}} produit(s)</h2>
+</div>
+
+
+

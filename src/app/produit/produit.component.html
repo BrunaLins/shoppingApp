@@ -1,0 +1,74 @@
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>-->
+ 
+ <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+     <!---<ul class="navbar-nav mr-auto">
+        <li class="nav-item">-->
+          <button class="btn btn-online-primary">Meat</button>          
+          <button class="btn btn-online-primary">Vegetable</button>          
+        <button class="btn btn-online-primary">Fruit</button>          
+        <button class="btn btn-online-primary">Drink</button>          
+        <button class="btn btn-online-primary">Others</button>
+        <input #userSearchInput (keyup)="searchProduit(userSearchInput.value)" class="" placeholder="recherche..."
+            type="text"style="width:100px;">  
+
+  <!----  <form class="form-inline my-2 my-lg-0">
+            
+          </form>
+
+        
+        
+     <li class="nav-item active">
+          <a class="nav-link" href="#">Vegetable</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Fruit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Drink</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Others</a>
+          </li>        
+      </ul>
+     
+  
+  <ul *ngIf="gridTemplate==false" class="list-group">-->
+    <ul>
+    <li [routerLink]="" *ngFor="let produit of produits"
+        class="list-group-item d-flex justify-content-between align-item-center">
+        <span>
+          <button (click)="deleteProduit(produit)" class="btn btn-light">
+            <i class="fa fa-trash"></i>
+        </button>
+            <img width="80" class="img-thumbnail" src="{{produit.image}}">    
+            {{produit.nom}}
+        </span>         
+        <span>
+             {{produit.price}}                     
+            
+                <button (click)="addProduitToPaniers(produit)" class="btn btn-light">
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </span>                
+    </li>
+</ul>
+<!--<ul *ngIf="gridTemplate==true" class="list-group">
+    <li [routerLink]="[produit.id]" *ngFor="let produit of produits"
+        class="list-group-item d-flex justify-content-between align-item-center">
+        <span>
+            
+            <img width="80" class="img-thumbnail" src="{{produit.image}}">    
+            {{produit.nom}}
+        </span>         
+        <span>
+             {{produit.price}}                     
+            
+                <button (click)="addOrRemoveProduitToPaniers(produit)" class="btn btn-light">
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </span>                
+    </li>
+</ul>-->
+ 
