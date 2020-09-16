@@ -5,7 +5,8 @@
  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
      <!---<ul class="navbar-nav mr-auto">
         <li class="nav-item">-->
-          <button class="btn btn-online-primary">Meat</button>          
+       <!-- <div *ngVar="'meat' as category"></div>-->
+          <button class="btn btn-online-primary">Meat</button>       
           <button class="btn btn-online-primary">Vegetable</button>          
         <button class="btn btn-online-primary">Fruit</button>          
         <button class="btn btn-online-primary">Drink</button>          
@@ -49,6 +50,7 @@
              {{produit.price}}                     
             
                 <button (click)="addProduitToPaniers(produit)" class="btn btn-light">
+                 
                     <i class="fa fa-shopping-cart"></i>
                 </button>
             </span>                

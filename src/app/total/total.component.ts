@@ -9,23 +9,22 @@ import { ProduitService} from '../services/produit.service';
 export class TotalComponent implements OnInit {
   
 
-  totalPrice:number;
+  
+  produits:Array<any>;
+  paniers:Array<any>;
+  total :any;
 
   constructor(private  produitService:ProduitService) { 
-
-  }
-
-  ngOnInit():void {      
-   
-    this.totalPrice= this.produitService.getPrices();
     
-  
-  }
-  calculTotalPrice() {
-      this.produitService.calculTotalPrice();
-      
-    }
-  
   }
 
+  ngOnInit(){      
+    this.produits= this.produitService.getProduits();
+    this.paniers=this.produitService.getPaniers();
+    this.total = this.produitService.calculTotalPrice();
+    
+    
+    
+  }
 
+}

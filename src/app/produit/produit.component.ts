@@ -28,6 +28,7 @@ export class ProduitComponent implements OnInit {
     }
 
   } 
+  
  
 
   addProduitToPaniers(produit) {

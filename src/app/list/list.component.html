@@ -7,17 +7,20 @@
 
 <div>
   
-  <a *ngFor="let produit of paniers" href="#" class="list-group-item">  
-    <button (click)="removeProduitToPaniers(produits)" class="btn btn-light">
+ <a *ngFor="let panier of paniers" href="#" class="list-group-item"> 
+    
+    <button (click)="removeProduitInPaniersDb(panier)" class="btn btn-light">
+      <!--<button class="pull-right btn btn-sm btn-warning" (click)="deleteItem(ival.value)">Delete</button>-->
       <i class="fa fa-trash"></i>
     </button>
-<!---<p style="margin:0 auto;">{{produit.nom}}<span style="float:right;">{{produit.price}}</span></p>-->
-{{produit.nom}}<span style="float:right;">{{produit.price}}</span>
+<!--<p style="margin:0 auto;">{{produit.nom}}<span style="float:right;">{{produit.price}}</span></p>-->
+{{panier.nom}}<span style="float:right;">{{panier.price}}</span>
 </a>
 </div>
 <div class="d-flex justify-content-between">
   <h2 > {{paniers.length}} produit(s)</h2>
 </div>
+
 
 
 

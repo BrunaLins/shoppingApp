@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵConsole } from '@angular/core';
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { ok } from 'assert';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProduitService {
   
-  private paniersDb=[];
-  private totalPrice:number;
+  paniersDb=[];
+  total:any;
    private produitsDb=[
      {id:1,
       nom:"Chicken",
@@ -313,15 +315,24 @@ export class ProduitService {
     this.produitsDb.splice(index, 1);
   } 
   addProduitToPaniersDb(produit) {
+    console.log(produit);
     let index = this.paniersDb.indexOf(produit);
     // SI le contact n'exite pas dans this.paniersDb -> on l'ajoute
     if (index === -1) {
       this.paniersDb.push(produit);
     }
+    this.paniersDb.forEach(element => {
+      this.total = element.price;
+      //console.log(this.totalPrice);
+      this.calculTotalPrice(); 
+    });
+    return produit;
    
   }
-  removeProduitToPaniersDb(produit){
-    let index = this.paniersDb.indexOf(produit);
+  removeProduitInPaniersDb(x21){
+    console.log(x21);
+    let index = this.paniersDb.indexOf(x21);
+    
     this.paniersDb.splice(index, 1);
   }
   /*  else {
@@ -329,32 +340,52 @@ export class ProduitService {
     }
     console.log(this.paniersDb);
   }*/
-  
-  getPrices(){
-    return this.totalPrice;
-  }
-  
-  calculTotalPrice(){
 
+  calculTotalPrice()
 
-    let total=0;
-    for(let i=0; i<this.paniersDb.length;i++) {
-     if(this.paniersDb[i].price){
-       total+=this.paniersDb[i].price;
-       this.totalPrice= total;
-           
-       
-     }
-     return total;
+  { var total=0;
+    this.paniersDb.forEach(element=>{
+      total+=element.price;
+      this.total=total;
+    })
     
-   //  let totalPrice=(this.paniersDb[index].price+this.paniersDb[index+1].price)-this.paniersDb[index].price;
-     //this.paniersDb[index]++;
-     //return totalPrice;   
-     
+    
+    console.log(total);
+    return total;
+    //var that = this;   
+    
+    /*if (panier !== undefined){
+      panier.forEach(element =>{
+      console.log("coucou");
+      total += element.price;
+      return total;
+      });
+    } */
+   /*this.paniersDb.forEach(item=>{
+      total+=item[index][4];
+    
+    })*/
+    
   
-    }
+    //(let i=0; i<that.paniersDb.length; i++)
+    
+      
+        //total+=that.paniersDb[i][4];
+     // that.totalPrice= total;
+      
+    
+    
+    
+    
   
   }
+
 
  
+  
 }
+  
+  
+
+ 
+

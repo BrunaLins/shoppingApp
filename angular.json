@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shoppingApp",
+            "outputPath": "dist/shoppinapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "shoppingApp:build"
+            "browserTarget": "shoppingapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "shoppingApp:build:production"
+              "browserTarget": "shoppingapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shoppingApp:build"
+            "browserTarget": "shoppingapp:build"
           }
         },
         "test": {
@@ -88,6 +89,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input":"node_modules/@angular/prebuilt-themes/deeppurple-amber.css"
+              },
               "src/styles.css"
             ],
             "scripts": []
@@ -110,15 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "shoppingApp:serve"
+            "devServerTarget": "shoppingapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "shoppingApp:serve:production"
+              "devServerTarget": "shoppingapp:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "shoppingApp"
+    }
+  },
+  "defaultProject": "shoppingapp"
 }

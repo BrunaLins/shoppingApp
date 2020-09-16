@@ -8,31 +8,37 @@ import { ProduitService} from '../services/produit.service';
 })
 export class ListComponent implements OnInit {
 
+  
   // on declare nos variables;
   title:string;
   produits:Array<any>;
   paniers:Array<any>;
   price:number;
+  total:number;
   
 
   constructor(private  produitService:ProduitService) {
     console.log(this);
    }
 
-  ngOnInit() {
+  ngOnInit(){
   this.produits= this.produitService.getProduits();
   this.paniers = this.produitService.getPaniers();  
-  this.price= this.produitService.getPrices();
+ // this.price= this.produitService.getPrices();
   
   
   }
-  removeProduitToPaniers(produit){
-    this.produitService.removeProduitToPaniersDb(produit);
-  }
-  calculTotalPrice(){
-    this.produitService.calculTotalPrice();
 
+  removeProduitInPaniersDb(produit){
+    this.produitService.removeProduitInPaniersDb(produit);
+  }
+   /*calculTotalPrice(){
+    this.produitService.calculTotalPrice();
+    this.total = this.produitService.calculTotalPrice();
+    console.log(this.total);}*/
+
+  
  
 }
 
-}
+
