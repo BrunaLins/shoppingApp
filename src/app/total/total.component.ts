@@ -12,7 +12,7 @@ export class TotalComponent implements OnInit {
   
   produits:Array<any>;
   paniers:Array<any>;
-  total :any;
+  total =0;
 
   constructor(private  produitService:ProduitService) { 
     
@@ -21,10 +21,8 @@ export class TotalComponent implements OnInit {
   ngOnInit(){      
     this.produits= this.produitService.getProduits();
     this.paniers=this.produitService.getPaniers();
-    this.total = this.produitService.calculTotalPrice();
-    
-    
     
   }
+
 
 }

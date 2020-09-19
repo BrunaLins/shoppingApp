@@ -8,7 +8,8 @@ import { ok } from 'assert';
 export class ProduitService {
   
   paniersDb=[];
-  total:any;
+  total = 0;
+  total_test = 0;
    private produitsDb=[
      {id:1,
       nom:"Chicken",
@@ -309,24 +310,23 @@ export class ProduitService {
  getPaniers(){
    return this.paniersDb;
  }
- 
   deleteProduit(produit) {
     let index = this.produitsDb.indexOf(produit);
     this.produitsDb.splice(index, 1);
   } 
   addProduitToPaniersDb(produit) {
-    console.log(produit);
+    var valeur = 0
     let index = this.paniersDb.indexOf(produit);
     // SI le contact n'exite pas dans this.paniersDb -> on l'ajoute
     if (index === -1) {
       this.paniersDb.push(produit);
     }
+    /*console.log(this.paniersDb);
     this.paniersDb.forEach(element => {
-      this.total = element.price;
-      //console.log(this.totalPrice);
-      this.calculTotalPrice(); 
-    });
-    return produit;
+      valeur = element.price
+    });*/
+    
+    return this.paniersDb;
    
   }
   removeProduitInPaniersDb(x21){
@@ -341,48 +341,6 @@ export class ProduitService {
     console.log(this.paniersDb);
   }*/
 
-  calculTotalPrice()
-
-  { var total=0;
-    this.paniersDb.forEach(element=>{
-      total+=element.price;
-      this.total=total;
-    })
-    
-    
-    console.log(total);
-    return total;
-    //var that = this;   
-    
-    /*if (panier !== undefined){
-      panier.forEach(element =>{
-      console.log("coucou");
-      total += element.price;
-      return total;
-      });
-    } */
-   /*this.paniersDb.forEach(item=>{
-      total+=item[index][4];
-    
-    })*/
-    
-  
-    //(let i=0; i<that.paniersDb.length; i++)
-    
-      
-        //total+=that.paniersDb[i][4];
-     // that.totalPrice= total;
-      
-    
-    
-    
-    
-  
-  }
-
-
- 
-  
 }
   
   

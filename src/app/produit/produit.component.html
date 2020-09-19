@@ -37,7 +37,7 @@
   
   <ul *ngIf="gridTemplate==false" class="list-group">-->
     <ul>
-    <li [routerLink]="" *ngFor="let produit of produits"
+    <li *ngFor="let produit of produits"
         class="list-group-item d-flex justify-content-between align-item-center">
         <span>
           <button (click)="deleteProduit(produit)" class="btn btn-light">
