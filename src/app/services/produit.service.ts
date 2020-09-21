@@ -6,11 +6,12 @@ import { ok } from 'assert';
   providedIn: 'root'
 })
 export class ProduitService {
-  
+
   paniersDb=[];
   total = 0;
   total_test = 0;
    private produitsDb=[
+    
      {id:1,
       nom:"Chicken",
       category:"meat",
@@ -65,7 +66,7 @@ export class ProduitService {
       image:"https://www.listchallenges.com/f/items/2f8e9454-7918-4994-843e-a4c7579607ea.jpg",
       price:13
      },
-   
+     
      {id:10,
       nom:"Radicchio",
       category:"vegetable",
@@ -120,6 +121,7 @@ export class ProduitService {
       image:"https://www.listchallenges.com/f/items/1b2776fc-1705-4482-ab07-bae99adcaf59.jpg",
       price:2
      },
+     
      {id:19,
       nom:"Lemon",
       category:"fruit",
@@ -174,6 +176,7 @@ export class ProduitService {
       image:"https://www.listchallenges.com/f/items/99d09e92-ae17-426d-b71c-0377609d57a4.jpg",
       price:2.9
      },
+     
      {id:28,
       nom:"Energy Drink",
       category:"drink",
@@ -204,13 +207,7 @@ export class ProduitService {
       image:"https://www.listchallenges.com/f/items/ad8af6e8-61aa-4968-8ef9-f8f40680040c.jpg",
       price:3
      },
-     {id:33,
-      nom:"Juice",
-      category:"drink",
-      image:"https://www.listchallenges.com/f/items2020/639015b4-3994-4492-b264-70f26413f4b9.jpg",
-      price:3.99
-     },
-     {id:34,
+    {id:34,
       nom:"Apple Juice",
       category:"drink",
       image:"https://www.listchallenges.com/f/items/52b46eaa-fcfd-4e7d-b24d-1d8c94ecab22.jpg",
@@ -234,6 +231,7 @@ export class ProduitService {
       image:"https://www.listchallenges.com/f/items/9f3d707a-8295-43a3-97a9-85703f60bd5a.jpg",
       price:2.9
      },
+    
      {id:38,
       nom:"Tabasco",
       category:"others",
@@ -278,16 +276,17 @@ export class ProduitService {
      },
      {id:45,
       nom:"Cake",
-      category:"drink",
+      category:"others",
       image:"https://www.listchallenges.com/f/items/c7087e9c-ba41-4d32-a52a-456199fca91a.jpg",
       price:4
      },
      {id:46,
       nom:"Cookie",
-      category:"drink",
+      category:"others",
       image:"https://www.listchallenges.com/f/items/b3c97953-723e-4c6f-93cf-4074766de9a1.jpg",
       price:3
      },
+    
    ];
    /*
     méthodes accesseurs
@@ -310,6 +309,7 @@ export class ProduitService {
  getPaniers(){
    return this.paniersDb;
  }
+
   deleteProduit(produit) {
     let index = this.produitsDb.indexOf(produit);
     this.produitsDb.splice(index, 1);
@@ -335,13 +335,17 @@ export class ProduitService {
     
     this.paniersDb.splice(index, 1);
   }
+ 
   /*  else {
   
     }
     console.log(this.paniersDb);
   }*/
 
-}
+ 
+  
+  }
+
   
   
 

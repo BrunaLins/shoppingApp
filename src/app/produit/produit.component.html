@@ -6,11 +6,19 @@
      <!---<ul class="navbar-nav mr-auto">
         <li class="nav-item">-->
        <!-- <div *ngVar="'meat' as category"></div>-->
-          <button class="btn btn-online-primary">Meat</button>       
-          <button class="btn btn-online-primary">Vegetable</button>          
-        <button class="btn btn-online-primary">Fruit</button>          
-        <button class="btn btn-online-primary">Drink</button>          
-        <button class="btn btn-online-primary">Others</button>
+   <!----l *ngIf="meatTemplate==true" class="meat-group">-->
+
+   <!----  <button ng(click)="showProduitsMeat(produit)" class="btn btn-online-primary"id="show_meat">Meat</button>-->
+        <button (click)="showProduitsMeat()" class="btn btn-online-primary"id="show_meat">Meat</button>
+        {{produitsMeat}}
+        <button (click)="showProduitsVegetable()"class="btn btn-online-primary"id="show_vegetable">Vegetable</button>
+        {{produitsVegetable}}
+        <button (click)="showProduitsFruit()"class="btn btn-online-primary"id="show_fruit">Fruit</button>    
+         {{produitsFruit}}   
+        <button (click)="showProduitsDrink()"class="btn btn-online-primary" id="show_drink">Drink</button>  
+          {{produitsDrink}}   
+        <button (click)="showProduitsOthers()"class="btn btn-online-primary" id="show_others">Others</button>
+          {{produitsOther}}
         <input #userSearchInput (keyup)="searchProduit(userSearchInput.value)" class="" placeholder="recherche..."
             type="text"style="width:100px;">  
 
@@ -47,7 +55,7 @@
             {{produit.nom}}
         </span>         
         <span>
-             {{produit.price}}                     
+             {{produit.price}}€    
             
                 <button (click)="addProduitToPaniers(produit)" class="btn btn-light">
                  
@@ -56,21 +64,4 @@
             </span>                
     </li>
 </ul>
-<!--<ul *ngIf="gridTemplate==true" class="list-group">
-    <li [routerLink]="[produit.id]" *ngFor="let produit of produits"
-        class="list-group-item d-flex justify-content-between align-item-center">
-        <span>
-            
-            <img width="80" class="img-thumbnail" src="{{produit.image}}">    
-            {{produit.nom}}
-        </span>         
-        <span>
-             {{produit.price}}                     
-            
-                <button (click)="addOrRemoveProduitToPaniers(produit)" class="btn btn-light">
-                    <i class="fa fa-shopping-cart"></i>
-                </button>
-            </span>                
-    </li>
-</ul>-->
- 
+

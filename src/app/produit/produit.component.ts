@@ -9,13 +9,20 @@ import { ProduitService} from '../services/produit.service';
 export class ProduitComponent implements OnInit {
   title:string;
   produits:Array<any>;
-  paniers:Array<any>;
+  paniers:Array<any>; 
+  category:string;
+  
+  
+  
 
   constructor(private  produitService:ProduitService) { }
 
-  ngOnInit():  void{
-    this.produits= this.produitService.getProduits();
+  ngOnInit() {
+    this.produits= this.produitService.getProduits();   
     this.paniers=this.produitService.getPaniers();
+    
+
+
     
   }
  
@@ -40,11 +47,54 @@ export class ProduitComponent implements OnInit {
     //recuperer la saisie de l'utilisateur
     this.produits = this.produitService.getProduits()
       .filter((produit) =>
-        produit.nom.toLowerCase().includes(userSearchText) 
-      
-      );
+        produit.nom.toLowerCase().includes(userSearchText));       
+      //  (contact.first + " " + contact.last).toLowerCase().includes(userSearchText)
   }
 
+  showProduitsMeat(){
+  
+    let produitsMeat;
+    produitsMeat=this.produits.filter(element=>element.category=='meat');
 
+   // let produitsVegetable= this.produitsVegetable;  
+    console.log(produitsMeat);       
+    return produitsMeat;
+  }
+   showProduitsVegetable(){
+    
+      var produitsVegetable;
+      produitsVegetable=this.produits.filter(element=>element.category=='vegetable');
+  
+     // let produitsVegetable= this.produitsVegetable;  
+      console.log(produitsVegetable);       
+      return produitsVegetable;
+    }
+    showProduitsFruit(){
+      let produitsFruit;
+      produitsFruit=this.produits.filter(element=>element.category=='fruit');
+  
+     // let produitsVegetable= this.produitsVegetable;  
+      console.log(produitsFruit);       
+      return produitsFruit;
+    }
+    showProduitsDrink(){
+      let produitsDrink;
+      produitsDrink=this.produits.filter(element=>element.category=='drink');
+  
+     // let produitsVegetable= this.produitsVegetable;  
+      console.log(produitsDrink);       
+      return produitsDrink;
+    }
+    showProduitsOthers(){
+      let produitsOthers;
+      produitsOthers=this.produits.filter(element=>element.category=='others');
+  
+     // let produitsVegetable= this.produitsVegetable;  
+      console.log(produitsOthers);       
+      return produitsOthers;
+    }
+  
+  }
 
-}
+ 
+  

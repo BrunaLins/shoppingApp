@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   produits:Array<any>;
   paniers:Array<any>;
   price:number;
-  prixTotal = 0;
+  //prixTotal = 0;
   
 
   constructor(private  produitService:ProduitService) {
@@ -43,7 +43,7 @@ export class ListComponent implements OnInit {
     });
     return total;
   }
-
+  
   
 
    /*calculTotalPrice(){
